@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight&display=swap');
 
 header
 {
@@ -14,8 +15,8 @@ nav {
 }
 ul  li{
 display: inline-block;
-padding: 25px;
-margin: 15px;
+padding: 15px;
+margin: 0px;
 
 
 }
@@ -40,13 +41,11 @@ height: 200px;
 }
 a {
     text-decoration:none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Georgia, Times;
     font-size: 20px;
-    
-    
 }
-h1,h2,h3,h4{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+h2,h3,h4{
+    font-family: 'Zilla Slab Highlight', cursive;
     text-align: left;
 }
 p{
@@ -56,10 +55,5 @@ p{
 table ,td,th,tr 
 {
     border:2px solid black ;
-
-}
-.bodystore
-{
-    
 
 }
