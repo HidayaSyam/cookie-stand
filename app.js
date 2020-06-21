@@ -96,12 +96,12 @@ function FooterTable() {
         var sum = 0;
         var th1 = document.createElement('th');
         for (var j = 0; j < arrLocation.length; j++) {
-            
+
 
             sum = sum + arrLocation[j].arrcookiesperhour[i];
 
         }
-        total=total+sum;
+        total = total + sum;
         th1.textContent = sum;
         tr.appendChild(th1);
 
@@ -132,7 +132,7 @@ Location.prototype.render = function () {
         var th1 = document.createElement('th');
         th1.textContent = this.arrcookiesperhour[i] + ' ';
         tr1.appendChild(th1);
-        console.log(this.arrcookiesperhour[i])
+        //console.log(this.arrcookiesperhour[i])
 
 
     }
@@ -145,20 +145,42 @@ Location.prototype.render = function () {
 
     parent.appendChild(table);
 }
+
+//var locationform = document.getElementById("Location-form");
+
+
+
+function addshops(event) {
+    event.preventDefault();
+    var loc = event.target.locationname.value;
+    console.log(loc);
+    var min = event.target.mincust.value;
+    console.log(min);
+    var max = event.target.maxcust.value;
+    console.log(max);
+    var avg = event.target.avgsale.value;
+    console.log(avg);
+    var c= new Location(min,max,loc,avg);
+    HeaderTable();
+    Seattle.getCookise();
+    Seattle.render();
+    for (let i = 0; i < arrLocation.length; i++) {
+        arrLocation[i].getCookise();
+        arrLocation[i].render();
+    }
+    FooterTable();
+
+
+}
+var locationform = document.getElementById("Location-form");
+locationform.addEventListener('submit', addshops);
 //-----------------------------------------------------------------------------------------
 var Seattle = new Location(23, 65, 'Seattle', 6.3);
 var Tokyo = new Location(23, 65, 'Tokyo', 6.3);
 var Dubai = new Location(23, 65, 'Dubai', 6.3);
 var Paris = new Location(23, 65, 'Paris', 6.3);
 var Lima = new Location(23, 65, 'Lima', 6.3);
-HeaderTable();
-//Seattle.getCookise();
-//Seattle.render();
-for (let i = 0; i < arrLocation.length; i++) {
-    arrLocation[i].getCookise();
-    arrLocation[i].render();
-}
-FooterTable();
+
 //---------------------------------------------
 
 
